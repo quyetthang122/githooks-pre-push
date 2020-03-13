@@ -1,6 +1,6 @@
-file=`find ~/Sites/devdesktop/pre-push/* -name "sample-githook.info"`
+file=`find ~/Sites/devdesktop/githooks-pre-push/* -name "sample-githook.info"`
 
-line=$(head -n 1 $file)
+line=$(sed -n '2p' $file)
 
 verison=${line//version: }
 echo $verison
